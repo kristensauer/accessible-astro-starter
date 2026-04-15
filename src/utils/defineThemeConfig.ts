@@ -55,17 +55,17 @@ export type ThemeConfig = {
 
 const defaultConfig: Omit<ThemeConfig, 'name' | 'id'> = {
   seo: {
-    title: 'My Astro Site',
+    title: 'Home Depot Annual Report 2024',
     subtitle: '',
     description: 'A website built with Accessible Astro Starter',
     author: '',
     image: null,
   },
   colors: {
-    primary: '#d648ff',
-    secondary: '#00d1b7',
-    neutral: '#b9bec4',
-    outline: '#ff4500',
+    primary: '#F96302',
+    secondary: '#000000',
+    neutral: '#ffffff',
+    outline: '#747474',
   },
   navigation: {
     darkmode: true,

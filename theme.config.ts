@@ -1,6 +1,6 @@
 import { defineThemeConfig } from '@utils/defineThemeConfig'
 import previewImage from '@assets/img/social-preview-image.png'
-import logoImage from '@assets/img/logo.svg'
+import logoImage from '@assets/img/Home Depot Logos-01.svg'
 
 export default defineThemeConfig({
   name: 'Home Depot',
