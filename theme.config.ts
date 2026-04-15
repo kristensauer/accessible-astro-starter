@@ -42,6 +42,11 @@ export default defineThemeConfig({
         label: 'Part 2',
         href: '#part-2',
       },
+      {
+        type: 'link',
+        label: 'Contact Request',
+        href: '#contact-request',
+      },
     ],
   },
 })

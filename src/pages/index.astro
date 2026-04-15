@@ -1,6 +1,6 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
-import { Heading } from 'accessible-astro-components'
+import { Button, Checkbox, Fieldset, Form, Heading, Input, Radio, Textarea } from 'accessible-astro-components'
 ---
 
 <DefaultLayout title="The Home Depot 2024 Annual Report" useTitleTemplate={false}>
@@ -231,7 +231,6 @@ import { Heading } from 'accessible-astro-components'
 
         <div class="table-wrap" role="region" aria-labelledby="financial-table-caption" tabindex="0">
           <table>
-            <caption id="financial-table-caption">Selected 2024 performance indicators</caption>
             <thead>
               <tr>
                 <th scope="col">Geographic Location</th>
@@ -317,6 +316,29 @@ import { Heading } from 'accessible-astro-components'
         <p>
         During the fourth quarter of fiscal 2024, we credited 5,865 deferred stock units to participant accounts under the Restoration Plans pursuant to an exemption from the registration requirements of the Securities Act for involuntary, non-contributory plans. The deferred stock units convert to shares of common stock on a one-for-one basis following a termination of service as described in these plans.
         </p>
+              <Heading level="h2" id="contact-request">Contact Request</Heading>
+        <p>
+          Have questions regarding your share? Contact us below and we'll get back to you as soon as possible.
+        </p>
+        <Form>
+          <Input label="Name" required />
+          <Input label="Email" required />
+          <Textarea label="Message" required />
+          <Fieldset
+            name="interests"
+            legend="What are you inquiring about?"
+            required
+            data-validation="Please select at least one area of interest"
+          >
+            <Checkbox name="accessibility" value="a11y" label="Purchasing A Share" />
+            <Checkbox name="wcag-compliance" value="wcag" label="Existing Share" />
+            <Checkbox name="screen-reader" value="sr" label="Company Compliances" />
+            <Checkbox name="keyboard-nav" value="keyboard" label="Other" />
+          </Fieldset>
+          <Button htmlType="submit">Submit</Button>
+        </Form>
+
+      
       </article>
       <aside class="summary-panel" aria-labelledby="part-2-summary-title">
         <h3 id="part-2-summary-title">Stockholder Snapshot</h3>
