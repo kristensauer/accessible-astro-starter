@@ -24,7 +24,7 @@
 }
 
 @mixin outline {
-  outline: 3px dotted var(--outline-color);
+  outline: 3px solid #F96302;
   outline-offset: 4px;
   box-shadow: none;
 }
