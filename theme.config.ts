@@ -24,11 +24,6 @@ export default defineThemeConfig({
     items: [
       {
         type: 'link',
-        label: 'Home',
-        href: '#home',
-      },
-      {
-        type: 'link',
         label: 'Letter To Shareholders',
         href: '#letter-to-shareholders',
       },
