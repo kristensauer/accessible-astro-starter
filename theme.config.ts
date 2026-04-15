@@ -25,17 +25,22 @@ export default defineThemeConfig({
       {
         type: 'link',
         label: 'Home',
-        href: '/',
+        href: '#home',
+      },
+      {
+        type: 'link',
+        label: 'Letter To Shareholders',
+        href: '#letter-to-shareholders',
       },
       {
         type: 'link',
         label: 'Part 1',
-        href: '/1',
+        href: '#part-1',
       },
       {
         type: 'link',
         label: 'Part 2',
-        href: '/2',
+        href: '#part-2',
       },
     ],
   },

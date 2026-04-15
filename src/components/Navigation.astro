@@ -42,11 +42,25 @@ import { LauncherTrigger } from 'accessible-astro-launcher'
     const setActiveMenuItem = (): void => {
       const mobileDesktopMenus = mainNav.querySelectorAll('nav > ul')
       const currentPathname = window.location.pathname
+      const currentHash = window.location.hash
 
       mobileDesktopMenus.forEach((menu) => {
         const menuItems = [...menu.querySelectorAll('a[href]:not([rel*="external"])')] as HTMLAnchorElement[]
 
         menuItems.forEach((menuItem) => {
+          const href = menuItem.getAttribute('href') || ''
+          menuItem.classList.remove('is-active')
+          menuItem.removeAttribute('aria-current')
+
+          if (href.startsWith('#')) {
+            const isDefaultHome = href === '#home' && currentHash === ''
+            if (currentHash === href || isDefaultHome) {
+              menuItem.classList.add('is-active')
+              menuItem.setAttribute('aria-current', 'location')
+            }
+            return
+          }
+
           if (currentPathname.includes(menuItem.pathname.replaceAll('/', '')) && menuItem.textContent !== 'Home') {
             menuItem.classList.add('is-active')
             menuItem.setAttribute('aria-current', 'page')
@@ -205,6 +219,8 @@ import { LauncherTrigger } from 'accessible-astro-launcher'
       })
 
     setActiveMenuItem()
+    window.addEventListener('hashchange', setActiveMenuItem)
+
     window.addEventListener('click', (event: MouseEvent) => {
       const element = event.target as Element
       if (!element.hasAttribute('aria-haspopup') && !element.classList.contains('submenu-item')) {
