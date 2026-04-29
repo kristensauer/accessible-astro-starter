@@ -235,6 +235,16 @@ import { LauncherTrigger } from 'accessible-astro-launcher'
   @use 'scss/base/breakpoint' as *;
 
   #main-navigation {
+    position: sticky;
+    z-index: 300;
+    inset-block-start: 0;
+    border-block-end: 1px solid var(--border-color-subtle);
+    background-color: color-mix(in srgb, var(--background-color) 92%, transparent);
+
+    @supports (backdrop-filter: blur(6px)) {
+      backdrop-filter: blur(6px);
+    }
+
     > .container {
       display: flex;
       flex-wrap: wrap;
@@ -446,4 +456,5 @@ import { LauncherTrigger } from 'accessible-astro-launcher'
       }
     }
   }
+
 </style>
