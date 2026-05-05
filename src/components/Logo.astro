@@ -17,20 +17,53 @@ interface Props {
 }
 
 const { loading = 'eager' }: Props = Astro.props
+
+const logoLight = themeConfig.logo
+const logoDark = themeConfig.logoDark ?? themeConfig.logo
+const hasDarkLogo = Boolean(logoDark && logoDark !== logoLight)
 ---
 
 <Link href="/" class="flex items-center gap-2">
   {
-    themeConfig.logo && (
-      <Image
-        src={themeConfig.logo}
-        alt=""
-        aria-hidden="true"
-        width="47"
-        height="37"
-        loading={loading}
-      />
+    logoLight && (
+      <>
+        <Image
+          src={logoLight}
+          alt=""
+          aria-hidden="true"
+          width="47"
+          height="37"
+          loading={loading}
+          class="logo-image logo-image--light"
+        />
+        {hasDarkLogo && (
+          <Image
+            src={logoDark}
+            alt=""
+            aria-hidden="true"
+            width="47"
+            height="37"
+            loading={loading}
+            class="logo-image logo-image--dark"
+          />
+        )}
+      </>
     )
   }
   <span class="text-sm font-bold sm:text-lg">{themeConfig.name}</span>
 </Link>
+
+<style>
+  .logo-image--dark {
+    display: none;
+  }
+
+  :global(.darkmode) .logo-image--light {
+    display: none;
+  }
+
+  :global(.darkmode) .logo-image--dark {
+    display: block;
+    box-shadow: 0 0 0 1px #fff;
+  }
+</style>

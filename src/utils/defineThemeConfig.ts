@@ -33,6 +33,7 @@ export type ThemeConfig = {
   name: string
   id: string
   logo?: ImageMetadata | null
+  logoDark?: ImageMetadata | null
   seo: {
     title: string
     subtitle?: string

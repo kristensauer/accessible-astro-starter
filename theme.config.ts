@@ -1,11 +1,13 @@
 import { defineThemeConfig } from '@utils/defineThemeConfig'
 import previewImage from '@assets/img/social-preview-image.png'
-import logoImage from '@assets/img/Home Depot Logos-01.svg'
+import logoLightImage from '@assets/img/Home Depot Logos-01.svg'
+import logoDarkImage from '@assets/img/Home Depot Logos-03.svg'
 
 export default defineThemeConfig({
   name: 'Home Depot',
   id: 'accessible-home-depot-annual-report-2024',
-  logo: logoImage,
+  logo: logoLightImage,
+  logoDark: logoDarkImage,
   seo: {
     title: 'Accessible Home Depot Annual Report',
     description:
