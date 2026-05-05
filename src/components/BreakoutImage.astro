@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
 
 /**
  * BreakoutImage Component
@@ -10,7 +11,7 @@ type Props = {
   /**
    * The image source
    */
-  src: string
+  src: string | ImageMetadata
 } &
   /**
    * Alt text describing the image for screen readers.

@@ -5,18 +5,19 @@ import SocialShares from '@components/SocialShares.astro'
 import { Heading } from 'accessible-astro-components'
 import { getCollection, render } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
+import {
+  projectImage1,
+  projectImage2,
+  projectImage3,
+  projectImage4,
+  projectImage5,
+  projectImage6,
+} from '@utils/imageAssets'
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects')
 
-  const projectImages = [
-    { src: '/projects/project-image-1.png' },
-    { src: '/projects/project-image-2.png' },
-    { src: '/projects/project-image-3.png' },
-    { src: '/projects/project-image-4.png' },
-    { src: '/projects/project-image-5.png' },
-    { src: '/projects/project-image-6.png' },
-  ]
+  const projectImages = [projectImage1, projectImage2, projectImage3, projectImage4, projectImage5, projectImage6]
 
   return projects.map((project, index) => {
     const projectWithImage = {
@@ -40,7 +41,7 @@ const { Content } = await render(project)
 
 const author = {
   name: project.data.author,
-  image: '/projects/project-image-1.png',
+  image: projectImage1.src,
   bio: 'Project Creator',
 }
 ---

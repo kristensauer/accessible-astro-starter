@@ -7,6 +7,14 @@ import { Heading } from 'accessible-astro-components'
 import { Image } from 'astro:assets'
 import { BLOG_API_URL } from 'astro:env/server'
 import { slugify } from '@utils/slugify'
+import {
+  postImage1,
+  postImage2,
+  postImage3,
+  postImage4,
+  postImage5,
+  postImage6,
+} from '@utils/imageAssets'
 
 interface ApiPost {
   id: number
@@ -39,14 +47,7 @@ export async function getStaticPaths() {
     return []
   }
 
-  const postImages = [
-    { src: '/posts/post-image-1.png' },
-    { src: '/posts/post-image-2.png' },
-    { src: '/posts/post-image-3.png' },
-    { src: '/posts/post-image-4.png' },
-    { src: '/posts/post-image-5.png' },
-    { src: '/posts/post-image-6.png' },
-  ]
+  const postImages = [postImage1, postImage2, postImage3, postImage4, postImage5, postImage6]
 
   function truncateTitle(title: string) {
     const words = title.split(' ')
@@ -78,7 +79,7 @@ const postSlug = Astro.params.post ?? slugify(post.title)
 const canonicalUrl = new URL(`/blog/${postSlug}`, Astro.site ?? Astro.url).href
 const author = {
   name: 'A11Y Person',
-  image: '/posts/post-image-1.png',
+  image: postImage1.src,
   bio: 'Pasionate accessibility advocate',
 }
 ---
@@ -106,28 +107,28 @@ const author = {
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Image
-          src="/posts/post-image-1.png"
+          src={postImage1}
           alt=""
           width={1200}
           height={600}
           class="h-[250px] w-full rounded-lg object-cover"
         />
         <Image
-          src="/posts/post-image-2.png"
+          src={postImage2}
           alt=""
           width={1200}
           height={600}
           class="h-[250px] w-full rounded-lg object-cover"
         />
         <Image
-          src="/posts/post-image-3.png"
+          src={postImage3}
           alt=""
           width={1200}
           height={600}
           class="h-[250px] w-full rounded-lg object-cover"
         />
         <Image
-          src="/posts/post-image-4.png"
+          src={postImage4}
           alt=""
           width={1200}
           height={600}
@@ -156,7 +157,7 @@ const author = {
       <p>
         This image breaks out of the narrow container on larger screens, creating a more immersive visual experience.
       </p>
-      <BreakoutImage src="/posts/post-image-2.png" decorative={true} />
+      <BreakoutImage src={postImage2} decorative={true} />
       <p>
         Notice how the image above extends beyond the boundaries of the text content, creating visual interest and
         drawing attention to important visual elements.
