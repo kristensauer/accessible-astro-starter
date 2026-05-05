@@ -12,8 +12,14 @@ Sign Language Bridge revolutionizes communication for the deaf community by prov
 import BlockQuote from '@components/BlockQuote.astro'
 import BreakoutImage from '@components/BreakoutImage.astro'
 import { Image } from 'astro:assets'
+import {
+  projectImage2,
+  projectImage3,
+  projectImage4,
+  projectImage5,
+} from '@utils/imageAssets'
 
-<BreakoutImage src="/projects/project-image-2.png" decorative={true} />
+<BreakoutImage src={projectImage2} decorative={true} />
 
 ## Technical Challenges
 
@@ -23,28 +29,28 @@ The biggest hurdle was developing a system that could accurately capture and int
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
   <Image
-    src="/projects/project-image-2.png"
+    src={projectImage2}
     alt="Sign language translation app interface showing gesture recognition"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-3.png"
+    src={projectImage3}
     alt="Person using sign language with the translation system"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-4.png"
+    src={projectImage4}
     alt="Mobile version of the Sign Language Bridge application"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-5.png"
+    src={projectImage5}
     alt="Group demonstration of the Sign Language Bridge system"
     width={1200}
     height={600}
@@ -59,6 +65,6 @@ The biggest hurdle was developing a system that could accurately capture and int
   interpreter available 24/7, giving me true independence in professional settings.
 </BlockQuote>
 
-<BreakoutImage src="/projects/project-image-3.png" decorative={true} />
+<BreakoutImage src={projectImage3} decorative={true} />
 
 The project is currently expanding to support more sign languages and developing specialized vocabularies for professional environments.

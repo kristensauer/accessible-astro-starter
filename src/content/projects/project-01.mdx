@@ -12,8 +12,14 @@ Our team developed an inclusive smart home solution that makes home automation a
 import BlockQuote from '@components/BlockQuote.astro'
 import BreakoutImage from '@components/BreakoutImage.astro'
 import { Image } from 'astro:assets'
+import {
+  projectImage1,
+  projectImage2,
+  projectImage3,
+  projectImage4,
+} from '@utils/imageAssets'
 
-<BreakoutImage src="/projects/project-image-1.png" decorative={true} />
+<BreakoutImage src={projectImage1} decorative={true} />
 
 ## Technical Challenges
 
@@ -23,28 +29,28 @@ One of the biggest challenges was creating a reliable voice recognition system t
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
   <Image
-    src="/projects/project-image-1.png"
+    src={projectImage1}
     alt="Smart home assistant interface showing voice command visualization"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-2.png"
+    src={projectImage2}
     alt="User interacting with the smart home system via voice commands"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-3.png"
+    src={projectImage3}
     alt="Haptic feedback device component of the smart home system"
     width={1200}
     height={600}
     class="h-[250px] w-full rounded-lg object-cover"
   />
   <Image
-    src="/projects/project-image-4.png"
+    src={projectImage4}
     alt="Dashboard showing analytics of voice command usage patterns"
     width={1200}
     height={600}
@@ -59,6 +65,6 @@ One of the biggest challenges was creating a reliable voice recognition system t
   helps me confirm every action without needing to see anything.
 </BlockQuote>
 
-<BreakoutImage src="/projects/project-image-2.png" decorative={true} />
+<BreakoutImage src={projectImage2} decorative={true} />
 
 The project continues to evolve with regular updates based on user feedback, with a focus on expanding support for multiple languages and additional accessibility features.
